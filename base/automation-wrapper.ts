@@ -13,8 +13,16 @@ export class playwrightKeywords{
         await this._page.locator(locator).first().click({force:true});
     }
 
+    protected async hoverElement(locator:string){
+        await this._page.locator(locator).first().hover();
+    }
+
     protected async selectDropdownWithLabel(locator:string,labelDetails:string){
         await this._page.locator(locator).selectOption({label:labelDetails})
+    }
+
+    protected async waitForLoadState(state: Parameters<Page['waitForLoadState']>[0] = 'domcontentloaded') {
+        await this._page.waitForLoadState(state);
     }
 
     protected async assertText(locator:string,expectedValue:string):Promise<void>{
@@ -27,4 +35,7 @@ export class playwrightKeywords{
             }
         }
     }
+    protected async clickElementInsideFrame(frameLocator: string,locator: string): Promise<void> {
+    await this._page.frameLocator(frameLocator).locator(locator).first().click();
+}
 }
