@@ -11,7 +11,7 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
 
       const ackoCareerPage = new AckoCaereerPage(page);
       await ackoCareerPage.clickOnWhyAcko();
-      const newPage = await ackoCareerPage.clickOnCareers();
+      const newPage = await ackoCareerPage.clickOnCareers();//manually clicking the careers
       const careersPage = new AckoCaereerPage(newPage);
       await careersPage.clickOnSeeOpenPosition();
       await careersPage.clickOnAllDepartments();
@@ -23,7 +23,7 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
       await careersPage.selectLocation(location);
       await careersPage.clickLeadDevOpsEngineer();
       await careersPage.clickApplyForThisPosition();
-      console.log("Clicked Apply for this position");
+      await careersPage.FillFirstName(firstName);
 
       
       console.log({ location, firstName, lastName, email, phoneNumber, title, company, currentLocation, noticePeriod, currentCTC, expectedCTC });
