@@ -20,7 +20,10 @@ const EMAIL_LOCATOR="xpath=//input[@placeholder='Enter email']";
 const PHONE_NUM_LOCATOR="xpath=//input[@placeholder='Add phone number']";
 const TITLE_LOCATOR="xpath=//input[@placeholder='Enter title']";
 const COMPANY_LOCATOR="xpath=//input[@placeholder='Search company']";
-const CURR_LOCATOR="xpath=//input[@placeholder='Search city, state or country']"
+const CURR_LOCATOR="xpath=//input[@placeholder='Enter current location']";
+const NOTICE_PER_LOCATOR="xpath=//input[@placeholder='Enter notice period']";
+const CURR_CTC_LOCATOR="xpath=//input[@placeholder='Enter current ctc']";
+const EXP_CTC_LOCATOR="xpath=//input[@placeholder='Enter expected ctc']";
 
 export class AckoCaereerPage extends playwrightKeywords {
     constructor(page: Page) {
@@ -108,6 +111,18 @@ export class AckoCaereerPage extends playwrightKeywords {
     public async FillCurrLocation(currentLocation:string):Promise<void>
     {
         await super.sendTextToElementInsideFrame(CAREERS_FRAME,CURR_LOCATOR,currentLocation);
+    }
+    public async FillNoticePeriod(noticePeriod:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,NOTICE_PER_LOCATOR,noticePeriod);
+    }
+    public async Curr_CTC(currentCTC:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,CURR_CTC_LOCATOR,currentCTC);
+    }
+    public async exp_CTC(expectedCTC:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,EXP_CTC_LOCATOR,expectedCTC);
     }
     
 }

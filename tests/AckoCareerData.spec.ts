@@ -1,6 +1,7 @@
 import { test } from "@playwright/test";
 import { AckoCaereerPage } from "../Pages/AckoCareersPage.js";
 import { JsonUtils } from "../utils/json-utils.js";
+import { spawn } from "child_process";
 
 test.describe("To verify that the user can successfully apply for the Senior Product Designer position", () => {
   const ackoCareerData = JsonUtils.getJsonValue("ackoCareerData");
@@ -29,8 +30,11 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
       await careersPage.FillPhoneNumber(phoneNumber);
       await careersPage.FillTitle(title);
       await careersPage.FillCompany(company);
-      await careersPage.FillCurrLocation(currentLocation)
-      
+      await careersPage.FillCurrLocation(currentLocation);
+      await careersPage.FillNoticePeriod(noticePeriod);
+      await careersPage.Curr_CTC(currentCTC);
+      await careersPage.exp_CTC(expectedCTC);
+
       console.log({ location, firstName, lastName, email, phoneNumber, title, company, currentLocation, noticePeriod, currentCTC, expectedCTC });
     });
   }
