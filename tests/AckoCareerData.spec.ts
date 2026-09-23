@@ -26,6 +26,10 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
       await careersPage.FillFirstName(firstName);
       await careersPage.FillLastName(lastName);
       await careersPage.FillEmail(email);
+      await careersPage.FillPhoneNumber(phoneNumber);
+      await careersPage.FillTitle(title);
+      await careersPage.FillCompany(company);
+      await careersPage.FillCurrLocation(currentLocation)
       
       console.log({ location, firstName, lastName, email, phoneNumber, title, company, currentLocation, noticePeriod, currentCTC, expectedCTC });
     });

@@ -1,5 +1,6 @@
 import { type Page, expect } from "@playwright/test";
 import { playwrightKeywords } from "../base/automation-wrapper.js"
+import { title } from "process";
 
 const WHY_ACKO_LOCATOR = "xpath=//span[text()='Why ACKO?']";
 const CAREERS_LOCATOR = "xpath=//a[@href='/careers/' and normalize-space()='Careers']";
@@ -16,6 +17,10 @@ const APPLY_FOR_POSITION_LOCATOR = "xpath=//button[normalize-space()='Apply for 
 const FIRST_NAME_LOCATOR="xpath=//input[@placeholder='Enter first name']";
 const LAST_NAME_LOCATOR="xpath=//input[@placeholder='Enter last name']";
 const EMAIL_LOCATOR="xpath=//input[@placeholder='Enter email']";
+const PHONE_NUM_LOCATOR="xpath=//input[@placeholder='Add phone number']";
+const TITLE_LOCATOR="xpath=//input[@placeholder='Enter title']";
+const COMPANY_LOCATOR="xpath=//input[@placeholder='Search company']";
+const CURR_LOCATOR="xpath=//input[@placeholder='Search city, state or country']"
 
 export class AckoCaereerPage extends playwrightKeywords {
     constructor(page: Page) {
@@ -86,9 +91,26 @@ export class AckoCaereerPage extends playwrightKeywords {
     {
         await super.sendTextToElementInsideFrame(CAREERS_FRAME,EMAIL_LOCATOR,email);
     }
+    public async FillPhoneNumber(phoneNumber:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,PHONE_NUM_LOCATOR,phoneNumber);
+
+    }
+    public async FillTitle(title:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,TITLE_LOCATOR,title);
+    }
     
+    public async FillCompany(company:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,COMPANY_LOCATOR,company);
+    }
+    public async FillCurrLocation(currentLocation:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,CURR_LOCATOR,currentLocation);
+    }
     
-
-
-
 }
+
+
+
