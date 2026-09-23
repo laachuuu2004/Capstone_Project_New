@@ -21,8 +21,9 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
       //await careersPage.clickOnAllLocations();
       //console.log("Location from JSON:", location);
       await careersPage.selectLocation(location);
-      await careersPage.clickSeniorProductDesigner();
+      await careersPage.clickLeadDevOpsEngineer();
       await careersPage.clickApplyForThisPosition();
+      console.log("Clicked Apply for this position");
 
       
       console.log({ location, firstName, lastName, email, phoneNumber, title, company, currentLocation, noticePeriod, currentCTC, expectedCTC });

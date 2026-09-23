@@ -11,13 +11,15 @@ const DESIGN_LOCATOR = "xpath=//p[text()='Design']"
 const CLICK_ALL_LOCATIONS_LOCATOR = "xpath=//button[@aria-haspopup='menu' and @aria-expanded='false'][.//*[normalize-space()='All locations']]"
 //const DROPDOWN_ALL_LOCATIONS_LOCATOR ="xpath=//button[@aria-haspopup='menu' and @aria-expanded='true'][.//*[normalize-space()='All locations']]";
 //const BANGALORE_LOCATOR="xpath=//p[text()='Bengaluru, Karnataka, India']"
-const SENIOR_PRODUCT_DESIGNER_LOCATOR = "xpath=//*[normalize-space()='Senior Product Designer']";
+const LEAD_DEVOPS_ENGINEER_LOCATOR = "xpath=//*[normalize-space()='Senior Product Designer']";
 const APPLY_FOR_POSITION_LOCATOR = "xpath=//button[normalize-space()='Apply for this position']";
 export class AckoCaereerPage extends playwrightKeywords {
     constructor(page: Page) {
         super(page)
     }
 
+    //trying without Login
+    
     public async clickOnWhyAcko(): Promise<void> {
         await super.clickElement(WHY_ACKO_LOCATOR)
     }
@@ -59,19 +61,14 @@ export class AckoCaereerPage extends playwrightKeywords {
     /*public async selectBengaluruLocation(): Promise<void> {
         await super.clickElementInsideFrame(CAREERS_FRAME,);
     }*/
-    public async clickSeniorProductDesigner(): Promise<void> {
-        await super.clickElementInsideFrame(
-            CAREERS_FRAME,
-            SENIOR_PRODUCT_DESIGNER_LOCATOR
-        );
+    public async clickLeadDevOpsEngineer(): Promise<void> {
+        await super.clickElementInsideFrame(CAREERS_FRAME,LEAD_DEVOPS_ENGINEER_LOCATOR);
     }
 
     public async clickApplyForThisPosition(): Promise<void> {
-        await super.clickElementInsideFrame(
-            CAREERS_FRAME,
-            APPLY_FOR_POSITION_LOCATOR
-        );
+        await super.clickElementInsideFrame(CAREERS_FRAME,APPLY_FOR_POSITION_LOCATOR);
     }
+    
 
 
 
