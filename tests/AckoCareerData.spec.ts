@@ -16,9 +16,7 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
       await careersPage.clickOnSeeOpenPosition();
       await careersPage.clickOnAllDepartments();
       await careersPage.selectTechnologyDepartment();
-      console.log("Selected Department: Technology");
-      await careersPage.selectDesignDepartment();
-      console.log("Selected Design")
+      //await careersPage.selectDesignDepartment();
 
       //await careersPage.clickOnAllLocations();
       //console.log("Location from JSON:", location);

@@ -11,7 +11,8 @@ const DESIGN_LOCATOR="xpath=//p[text()='Design']"
 const CLICK_ALL_LOCATIONS_LOCATOR = "xpath=//button[@aria-haspopup='menu' and @aria-expanded='false'][.//*[normalize-space()='All locations']]"
 //const DROPDOWN_ALL_LOCATIONS_LOCATOR ="xpath=//button[@aria-haspopup='menu' and @aria-expanded='true'][.//*[normalize-space()='All locations']]";
 //const BANGALORE_LOCATOR="xpath=//p[text()='Bengaluru, Karnataka, India']"
-const SENIOR_PRODUCT_DESIGNER_APPLY_LOCATOR ="xpath=//div[contains(@class,'chakra-card')][.//*[normalize-space()='Senior Product Designer']]//a[.//span[normalize-space()='Apply Now']]";
+const SENIOR_PRODUCT_DESIGNER_APPLY_LOCATOR =
+    "xpath=//div[contains(@class,'chakra-card')][.//*[normalize-space()='Senior Product Designer']]//a[.//*[normalize-space()='Apply Now']]";
 
 export class AckoCaereerPage extends playwrightKeywords {
     constructor(page: Page) {
