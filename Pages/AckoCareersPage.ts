@@ -10,7 +10,8 @@ const TECHNOLOGY_LOCATOR = "xpath=//p[text()='Technology']";
 const CLICK_ALL_LOCATIONS_LOCATOR = "xpath=//button[@aria-haspopup='menu' and @aria-expanded='false'][.//*[normalize-space()='All locations']]"
 //const DROPDOWN_ALL_LOCATIONS_LOCATOR ="xpath=//button[@aria-haspopup='menu' and @aria-expanded='true'][.//*[normalize-space()='All locations']]";
 //const BANGALORE_LOCATOR="xpath=//p[text()='Bengaluru, Karnataka, India']"
-const 
+const SENIOR_PRODUCT_DESIGNER_APPLY_LOCATOR ="xpath=//div[contains(@class,'chakra-card')][.//*[normalize-space()='Senior Product Designer']]//a[.//span[normalize-space()='Apply Now']]";
+
 export class AckoCaereerPage extends playwrightKeywords {
     constructor(page: Page) {
         super(page)
@@ -54,6 +55,10 @@ export class AckoCaereerPage extends playwrightKeywords {
     /*public async selectBengaluruLocation(): Promise<void> {
         await super.clickElementInsideFrame(CAREERS_FRAME,);
     }*/
+   public async clickSeniorProductDesignerApplyNow(): Promise<void> {
+    await super.clickElementInsideFrame(CAREERS_FRAME,SENIOR_PRODUCT_DESIGNER_APPLY_LOCATOR);
+}
+
 
 
 
