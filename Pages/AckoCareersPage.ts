@@ -14,6 +14,8 @@ const CLICK_ALL_LOCATIONS_LOCATOR = "xpath=//button[@aria-haspopup='menu' and @a
 const LEAD_DEVOPS_ENGINEER_LOCATOR = "xpath=//*[normalize-space()='Lead DevOps Engineer']";
 const APPLY_FOR_POSITION_LOCATOR = "xpath=//button[normalize-space()='Apply for this position']";
 const FIRST_NAME_LOCATOR="xpath=//input[@placeholder='Enter first name']";
+const LAST_NAME_LOCATOR="xpath=//input[@placeholder='Enter last name']";
+const EMAIL_LOCATOR="xpath=//input[@placeholder='Enter email']";
 
 export class AckoCaereerPage extends playwrightKeywords {
     constructor(page: Page) {
@@ -74,6 +76,17 @@ export class AckoCaereerPage extends playwrightKeywords {
     {
         await super.sendTextToElementInsideFrame(CAREERS_FRAME,FIRST_NAME_LOCATOR,firstName);
     }
+    
+    public async FillLastName(lastName:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,LAST_NAME_LOCATOR,lastName);
+    }
+    
+    public async FillEmail(email:string):Promise<void>
+    {
+        await super.sendTextToElementInsideFrame(CAREERS_FRAME,EMAIL_LOCATOR,email);
+    }
+    
     
 
 

@@ -24,7 +24,8 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
       await careersPage.clickLeadDevOpsEngineer();
       await careersPage.clickApplyForThisPosition();
       await careersPage.FillFirstName(firstName);
-
+      await careersPage.FillLastName(lastName);
+      await careersPage.FillEmail(email);
       
       console.log({ location, firstName, lastName, email, phoneNumber, title, company, currentLocation, noticePeriod, currentCTC, expectedCTC });
     });
