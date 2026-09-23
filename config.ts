@@ -1,0 +1,1 @@
+export const JSON_File_PATH="test-data/data.json";
