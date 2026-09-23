@@ -10,6 +10,7 @@ test.describe("To verify that the user can successfully apply for the Senior Pro
     test(`Apply for Senior Product Designer Position - ${firstName} ${lastName}`, async ({ page }) => {
       await page.goto("/");
 
+      //without login performing the task
       const ackoCareerPage = new AckoCaereerPage(page);
       await ackoCareerPage.clickOnWhyAcko();
       const newPage = await ackoCareerPage.clickOnCareers();//manually clicking the careers
